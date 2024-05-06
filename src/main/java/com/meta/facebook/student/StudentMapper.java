@@ -8,6 +8,9 @@ public class StudentMapper {
 
     public Student toStudent(StudentDto dto){
         var student = new Student();
+        if(dto == null){
+            throw new NullPointerException("Student Dto shall not be Null");
+        }
         student.setFirstName(dto.firstName());
         student.setLastName(dto.lastName());
         student.setEmail(dto.email());
